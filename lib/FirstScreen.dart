@@ -6,49 +6,66 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 140,
-        title: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            'Welcome to Chicago',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.orange.shade400,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.blueGrey.shade400,
+        appBar: AppBar(
+          toolbarHeight: 170,
+          title: const Padding(
+            padding: EdgeInsets.only(bottom: 120),
+            child: Text(
+              ' Welcome to Chicago',
+              style: TextStyle(
+                fontSize: 38,
+                color: Colors.orangeAccent,
+              ),
             ),
           ),
-        ),
-        flexibleSpace: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
-
-         child: const Image(
-           image: AssetImage('images/chicagoproject1.png'),
-           fit: BoxFit.fill,
-         ),
-        ),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
-          )
-        ),
-        actions: <Widget>[
-          IconButton(
-          icon: Icon(Icons.info),
-          onPressed: () {
-            // Handle the button's onPressed event here
-            print('Info button pressed');
-          }, ),
-        ],
-      ),
-      body: Center(
-        child: ElevatedButton(
-          // Within the `FirstScreen` widget
-          onPressed: () {
-            // Navigate to the second screen using a named route.
-            Navigator.pushNamed(context, '/second');
-          },
-          child: const Text('Go to second'),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/chicagoproject1.png'),
+                fit: BoxFit.fill,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
+              )
+            ),
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            )
+          ),
+          bottom: const TabBar(
+            unselectedLabelColor: Colors.orange,
+            labelColor: Colors.blueAccent,
+            indicatorColor: Colors.blueAccent,
+            tabs: [
+              Tab(
+                icon: Icon(Icons.location_city_rounded, size: 45, color: Colors.orange),
+                child: Text(
+                  'NEIGHBORHOODS',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ),
+              Tab(
+                icon: Icon(Icons.event_rounded, size: 45, color: Colors.orange),
+                child: Text(
+                  'EVENTS',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ),
+              Tab(
+                icon: Icon(Icons.sports_football_rounded, size: 45, color: Colors.orange),
+                child: Text(
+                  'SPORTS',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
