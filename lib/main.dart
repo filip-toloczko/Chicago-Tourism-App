@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'FirstScreen.dart';
+import 'LoopScreen.dart';
 
 void main() {
   runApp(
@@ -9,6 +10,7 @@ void main() {
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/home': (context) => const FirstScreen(),
+        '/theloop': (context) => const LoopScreen(),
       },
     ),
   );
