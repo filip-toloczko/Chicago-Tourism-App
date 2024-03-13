@@ -11,17 +11,24 @@ class LoopScreen extends StatelessWidget {
       body: Center(
           child: Column(
             children: <Widget>[
+              const Padding(padding: EdgeInsets.all(25.0)),
               Container(
-                width: 300,
-                height: 300,
+                width: 250,
+                height: 250,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                 ),
                 child: ElevatedButton(
                   // backgroundColor: Colors.blueGrey,
                   onPressed: (){
-                    Navigator.pushNamed(context, '/home');
+                    Navigator.pop(context);
                   },
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    padding: EdgeInsets.zero,
+                    shape: CircleBorder(),
+                    backgroundColor: Colors.transparent,
+                  ),
                   child: Hero(
                     tag: 'The Loop',
                     child: Container(
@@ -40,11 +47,6 @@ class LoopScreen extends StatelessWidget {
                                 spreadRadius: 2.5)
                           ]),
                     ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: CircleBorder(),
-                    primary: Colors.transparent,
                   ),
                 ),
               )

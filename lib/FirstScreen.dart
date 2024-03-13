@@ -75,50 +75,212 @@ class FirstScreen extends StatelessWidget {
               child: Column(
                   children: <Widget>[
                     const Padding(padding: EdgeInsets.all(10.0)),
-                    ElevatedButton(
-
-                      style: ButtonStyle(
-                        shape: null,
-                        padding: MaterialStateProperty.all(EdgeInsets.zero),
-                      ),
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/theloop');
-                      },
-                      child: Hero(
-                        tag: 'The Loop',
-                        child: Container(
-                          width: 250,
-                          height: 250,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.orange, width: 10),
-                              image: const DecorationImage(
-                                  image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
-                              boxShadow: const [
-                                BoxShadow(
-                                    color: Colors.orangeAccent,
-                                    offset: Offset(5.0, 5.0),
-                                    blurRadius: 4.0,
-                                    spreadRadius: 2.5)
-                              ]),
+                    //Row for The Loop
+                    Row(
+                      children: [
+                      Container(
+                        width: 150,
+                        height: 150,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: ElevatedButton(
+                          onPressed: (){
+                            Navigator.pushNamed(context, '/theloop');
+                          },
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            padding: EdgeInsets.zero,
+                            shape: CircleBorder(),
+                            backgroundColor: Colors.transparent,
+                          ),
+                          child: Hero(
+                            tag: 'The Loop',
+                            child: Container(
+                              width: 150,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(color: Colors.orange, width: 10),
+                                  image: const DecorationImage(
+                                      image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.orangeAccent,
+                                        offset: Offset(5.0, 5.0),
+                                        blurRadius: 4.0,
+                                        spreadRadius: 2.5)
+                                  ]),
+                            ),
+                          ),
                         ),
                       ),
+                      Text(
+                        '    The Loop',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.orangeAccent,
+                        ),
+
+                      ),
+                      ],
+                    ),
+                    const Padding(padding: EdgeInsets.all(10.0)),
+                    Row(
+                      children: [
+                        Container(
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/theloop');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'The Loop',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '    The Loop',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
+                    ),
+                    const Padding(padding: EdgeInsets.all(10.0)),
+                    Row(
+                      children: [
+                        Container(
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/theloop');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'The Loop',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '    The Loop',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
                     ),
                   ]
               ),
             ),
+            const Padding(padding: EdgeInsets.all(10.0)),
             Center(
               child: Column(
                   children: <Widget>[
                     const Padding(padding: EdgeInsets.all(10.0)),
-                    Hero(
-                      tag: 'The Loop',
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/neighborhoods');
-                        },
-                        child: Image.asset('images/theloop.png'),
-                      ),
+                    Row(
+                      children: [
+                        Container(
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/theloop');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'The Loop',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '    The Loop',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
                     ),
                   ]
               ),
