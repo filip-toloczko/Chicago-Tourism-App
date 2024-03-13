@@ -74,11 +74,12 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
-                    const Padding(padding: EdgeInsets.all(10.0)),
+                    const Padding(padding: EdgeInsets.all(15.0)),
                     //Row for The Loop
                     Row(
                       children: [
                       Container(
+                        padding: EdgeInsets.only(left: 7),
                         width: 150,
                         height: 150,
                         decoration: const BoxDecoration(
@@ -125,10 +126,11 @@ class FirstScreen extends StatelessWidget {
                       ),
                       ],
                     ),
-                    const Padding(padding: EdgeInsets.all(10.0)),
+                    const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
                         Container(
+                          padding: EdgeInsets.only(left: 7),
                           width: 150,
                           height: 150,
                           decoration: const BoxDecoration(
@@ -176,10 +178,11 @@ class FirstScreen extends StatelessWidget {
                       ],
                     ),
                     //Lincoln Park Row
-                    const Padding(padding: EdgeInsets.all(10.0)),
+                    const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
                         Container(
+                          padding: EdgeInsets.only(left: 7),
                           width: 150,
                           height: 150,
                           decoration: const BoxDecoration(
@@ -187,7 +190,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                           child: ElevatedButton(
                             onPressed: (){
-                              Navigator.pushNamed(context, '/lincolnpark');
+                              Navigator.pushNamed(context, '/chinatown');
                             },
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
@@ -196,7 +199,7 @@ class FirstScreen extends StatelessWidget {
                               backgroundColor: Colors.transparent,
                             ),
                             child: Hero(
-                              tag: 'The Loop',
+                              tag: 'Chinatown',
                               child: Container(
                                 width: 150,
                                 height: 150,
@@ -204,7 +207,7 @@ class FirstScreen extends StatelessWidget {
                                     shape: BoxShape.circle,
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
-                                        image: AssetImage('images/lincolnpark.png'), fit: BoxFit.cover),
+                                        image: AssetImage('images/chinatown.png'), fit: BoxFit.cover),
                                     boxShadow: const [
                                       BoxShadow(
                                           color: Colors.orangeAccent,
@@ -217,7 +220,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '    The Loop',
+                          '    Chinatown',
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.orangeAccent,
