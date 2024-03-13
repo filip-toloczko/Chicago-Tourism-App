@@ -136,7 +136,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                           child: ElevatedButton(
                             onPressed: (){
-                              Navigator.pushNamed(context, '/theloop');
+                              Navigator.pushNamed(context, '/lincolnpark');
                             },
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
@@ -145,7 +145,7 @@ class FirstScreen extends StatelessWidget {
                               backgroundColor: Colors.transparent,
                             ),
                             child: Hero(
-                              tag: 'The Loop',
+                              tag: 'Lincoln Park',
                               child: Container(
                                 width: 150,
                                 height: 150,
@@ -153,7 +153,7 @@ class FirstScreen extends StatelessWidget {
                                     shape: BoxShape.circle,
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
-                                        image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                        image: AssetImage('images/lincolnpark.png'), fit: BoxFit.cover),
                                     boxShadow: const [
                                       BoxShadow(
                                           color: Colors.orangeAccent,
@@ -166,7 +166,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '    The Loop',
+                          '    Lincoln Park',
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.orangeAccent,
@@ -175,6 +175,7 @@ class FirstScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    //Lincoln Park Row
                     const Padding(padding: EdgeInsets.all(10.0)),
                     Row(
                       children: [
@@ -186,7 +187,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                           child: ElevatedButton(
                             onPressed: (){
-                              Navigator.pushNamed(context, '/theloop');
+                              Navigator.pushNamed(context, '/lincolnpark');
                             },
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
@@ -203,7 +204,7 @@ class FirstScreen extends StatelessWidget {
                                     shape: BoxShape.circle,
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
-                                        image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                        image: AssetImage('images/lincolnpark.png'), fit: BoxFit.cover),
                                     boxShadow: const [
                                       BoxShadow(
                                           color: Colors.orangeAccent,
