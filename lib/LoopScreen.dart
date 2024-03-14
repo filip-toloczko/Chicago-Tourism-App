@@ -8,10 +8,41 @@ class LoopScreen extends StatelessWidget {
     //
     return Scaffold(
       backgroundColor: Colors.blueGrey.shade400,
+        appBar: AppBar(
+          toolbarHeight: 170,
+          title: const Padding(
+            padding: EdgeInsets.only(
+              bottom: 140,
+            ),
+            child: Text(
+              '     The Loop',
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.orangeAccent,
+              ),
+            ),
+          ),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/chicagoproject1.png'),
+                fit: BoxFit.fill,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
+              )
+            ),
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            )
+          ),
+        ),
       body: Center(
           child: Column(
             children: <Widget>[
-              const Padding(padding: EdgeInsets.all(25.0)),
+              const Padding(padding: EdgeInsets.all(5.0)),
               Container(
                 width: 250,
                 height: 250,
@@ -49,7 +80,40 @@ class LoopScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              const Padding(padding: EdgeInsets.all(5.0)),
+              const Text(
+                "The Loop\nChicago Loop, Chicago, IL\n",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.orangeAccent,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const Text(
+                "The Loop is a district in the downtown area of Chicago. It has some of the most iconic architecture in the city, and serves as its commercial hub.",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.orangeAccent,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const Padding(padding: EdgeInsets.all(10.0)),
+              FloatingActionButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/lincolnpark');
+                },
+                backgroundColor: Colors.blueAccent,
+                child: IconButton(
+                  icon: Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/theloop');
+                  },
+                ),
               )
+
+
+
             ],
           ),
       ),

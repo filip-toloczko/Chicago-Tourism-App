@@ -17,7 +17,7 @@ class FirstScreen extends StatelessWidget {
                 bottom: 120,
             ),
             child: Text(
-              'Welcome to Chicago',
+              '  Welcome to Chicago',
               style: TextStyle(
                 fontSize: 37,
                 color: Colors.orangeAccent,
@@ -232,7 +232,6 @@ class FirstScreen extends StatelessWidget {
                   ]
               ),
             ),
-            const Padding(padding: EdgeInsets.all(10.0)),
             Center(
               child: Column(
                   children: <Widget>[
