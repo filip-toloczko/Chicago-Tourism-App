@@ -1,10 +1,40 @@
 import 'package:flutter/material.dart';
 
-class LoopScreen extends StatelessWidget {
-  const LoopScreen({super.key});
+class LoopScreen extends StatefulWidget {
+  const LoopScreen({Key? key}) : super(key: key);
+  @override
+  State<LoopScreen> createState() => _LoopScreenState();
+}
+class _LoopScreenState extends State<LoopScreen>{
+  int counter = 0;
+  String message = "The Loop is a district in the downtown area of Chicago. It has some of the most iconic architecture in the city, and serves as its commercial hub.";
+  String loopImage = "images/theloop.png";
+
+  @override
+  void initState(){
+    super.initState();
+    message = "The Loop is a district in the downtown area of Chicago. It has some of the most iconic architecture in the city, and serves as its commercial hub.";
+    loopImage = "images/theloop.png";
+  }
 
   @override
   Widget build(BuildContext context) {
+
+
+    void trivia(int i){
+      if(counter%2 == 0){
+        setState(() {
+          message = "The Loop is a district in the downtown area of Chicago. It has some of the most iconic architecture in the city, and serves as its commercial hub.";
+          loopImage = "images/theloop.png";
+        });
+      }
+      else{
+        setState(() {
+          message = "The reason that it is called 'The Loop' is because the L train makes a loop accross the boundaries of the neighborhood.";
+          loopImage = "images/thelooptrivia.png";
+        });
+      }
+    }
     //
     return Scaffold(
       backgroundColor: Colors.blueGrey.shade400,
@@ -57,7 +87,7 @@ class LoopScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
                     padding: EdgeInsets.zero,
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     backgroundColor: Colors.transparent,
                   ),
                   child: Hero(
@@ -68,8 +98,8 @@ class LoopScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.orange, width: 10),
-                          image: const DecorationImage(
-                              image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                          image: DecorationImage(
+                              image: AssetImage(loopImage), fit: BoxFit.cover),
                           boxShadow: const [
                             BoxShadow(
                                 color: Colors.orangeAccent,
@@ -90,33 +120,34 @@ class LoopScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const Text(
-                "The Loop is a district in the downtown area of Chicago. It has some of the most iconic architecture in the city, and serves as its commercial hub.",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.orangeAccent,
+              Padding(
+                padding: const EdgeInsets.all(5.5),
+                child: Text(
+                  message,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.orangeAccent,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
-              const Padding(padding: EdgeInsets.all(10.0)),
-              FloatingActionButton(
-                onPressed: (){
-                  Navigator.pushNamed(context, '/lincolnpark');
-                },
-                backgroundColor: Colors.blueAccent,
-                child: IconButton(
-                  icon: Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/theloop');
-                  },
-                ),
-              )
-
-
-
             ],
           ),
       ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.pushNamed(context, '/lincolnpark');
+          },
+          backgroundColor: Colors.blueAccent,
+          tooltip: "Trivia",
+          child: IconButton(
+            icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
+            onPressed: (){
+              counter++;
+              trivia(counter);
+            },
+          ),
+        ),
     );
   }
 }

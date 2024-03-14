@@ -20,7 +20,7 @@ class FirstScreen extends StatelessWidget {
               '  Welcome to Chicago',
               style: TextStyle(
                 fontSize: 37,
-                color: Colors.orangeAccent,
+                color: Colors.orange,
               ),
             ),
           ),
@@ -79,7 +79,7 @@ class FirstScreen extends StatelessWidget {
                     Row(
                       children: [
                       Container(
-                        padding: EdgeInsets.only(left: 7),
+                        padding: const EdgeInsets.only(left: 7),
                         width: 150,
                         height: 150,
                         decoration: const BoxDecoration(
@@ -92,7 +92,7 @@ class FirstScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             elevation: 0,
                             padding: EdgeInsets.zero,
-                            shape: CircleBorder(),
+                            shape: const CircleBorder(),
                             backgroundColor: Colors.transparent,
                           ),
                           child: Hero(
@@ -116,7 +116,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text(
+                      const Text(
                         '    The Loop',
                         style: TextStyle(
                           fontSize: 20,
@@ -130,7 +130,7 @@ class FirstScreen extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.only(left: 7),
+                          padding: const EdgeInsets.only(left: 7),
                           width: 150,
                           height: 150,
                           decoration: const BoxDecoration(
@@ -143,7 +143,7 @@ class FirstScreen extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
                               padding: EdgeInsets.zero,
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               backgroundColor: Colors.transparent,
                             ),
                             child: Hero(
@@ -167,7 +167,7 @@ class FirstScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           '    Lincoln Park',
                           style: TextStyle(
                             fontSize: 20,
@@ -182,7 +182,7 @@ class FirstScreen extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.only(left: 7),
+                          padding: const EdgeInsets.only(left: 7),
                           width: 150,
                           height: 150,
                           decoration: const BoxDecoration(
@@ -195,7 +195,7 @@ class FirstScreen extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
                               padding: EdgeInsets.zero,
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               backgroundColor: Colors.transparent,
                             ),
                             child: Hero(
@@ -219,7 +219,7 @@ class FirstScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           '    Chinatown',
                           style: TextStyle(
                             fontSize: 20,
@@ -251,7 +251,7 @@ class FirstScreen extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
                               padding: EdgeInsets.zero,
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               backgroundColor: Colors.transparent,
                             ),
                             child: Hero(
@@ -275,7 +275,7 @@ class FirstScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           '    The Loop',
                           style: TextStyle(
                             fontSize: 20,
