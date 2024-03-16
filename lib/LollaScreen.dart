@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class ChinatownScreen extends StatefulWidget {
-  const ChinatownScreen({Key? key}) : super(key: key);
+class LollaScreen extends StatefulWidget {
+  const LollaScreen({Key? key}) : super(key: key);
   @override
-  State<ChinatownScreen> createState() => _ChinatownScreenState();
+  State<LollaScreen> createState() => _LollaScreenState();
 }
-class _ChinatownScreenState extends State<ChinatownScreen>{
+class _LollaScreenState extends State<LollaScreen>{
   int counter = 0;
-  String message = "Chinatown is a neighborhood south of the downtown area in Chicago. It offers a tourist destination filled with Chinese restaurants and stores.";
-  String loopImage = "images/chinatown.png";
+  String message = "Lollapalooza is a yearly music festival taking place in Grant Park. It is Chicago's largest and longest music festival.";
+  String loopImage = "images/lolla.png";
 
   @override
   void initState(){
     super.initState();
-    message = "Chinatown is a neighborhood south of the downtown area in Chicago. It offers a tourist destination filled with Chinese restaurants and stores.";
-    loopImage = "images/chinatown.png";
+    message = "Lollapalooza is a yearly music festival taking place in Grant Park. It is Chicago's largest and longest music festival.";
+    loopImage = "images/lolla.png";
   }
 
   @override
@@ -24,14 +24,14 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
     void trivia(int i){
       if(counter%2 == 0){
         setState(() {
-          message = "Chinatown is a neighborhood south of the downtown area in Chicago. It offers a tourist destination filled with Chinese restaurants and stores.";
-          loopImage = "images/chinatown.png";
+          message = "Lollapalooza is a yearly music festival taking place in Grant Park. It is Chicago's largest and longest music festival.";
+          loopImage = "images/lolla.png";
         });
       }
       else{
         setState(() {
-          message = "Chinatown is home to the Nine-Dragon Wall, which is a smaller copy of a larger wall located in Beijing, China.";
-          loopImage = "images/chinatowntrivia.png";
+          message = "Lollapalooza started as a farewell tour for the band Jane's Addiction. Years later the event made Chicago its permanent home.";
+          loopImage = "images/lollatrivia.png";
         });
       }
     }
@@ -45,7 +45,7 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
             bottom: 140,
           ),
           child: Text(
-            '    Chinatown',
+            '  Lollapalooza',
             style: TextStyle(
               fontSize: 40,
               color: Colors.orangeAccent,
@@ -91,7 +91,7 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
                   backgroundColor: Colors.transparent,
                 ),
                 child: Hero(
-                  tag: 'Chinatown',
+                  tag: 'lolla',
                   child: Container(
                     width: 250,
                     height: 250,
@@ -113,7 +113,7 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
             ),
             const Padding(padding: EdgeInsets.all(5.0)),
             const Text(
-              "Chinatown\nChinatown, Chicago, IL\n",
+              "Lollapalooza\n337 E. Randolph St. Chicago, IL\n",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.orangeAccent,
@@ -136,12 +136,12 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.pushNamed(context, '/chinatown');
+          Navigator.pushNamed(context, '/lolla');
         },
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.blueAccent,
         tooltip: "Trivia",
         child: IconButton(
-          icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.blueAccent,),
+          icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
           onPressed: (){
             counter++;
             trivia(counter);

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ftolo2_project_1/ChinatownScreen.dart';
-import 'package:ftolo2_project_1/LincolnParkScreen.dart';
+import 'ChinatownScreen.dart';
+import 'LincolnParkScreen.dart';
 import 'FirstScreen.dart';
 import 'LoopScreen.dart';
+import 'LollaScreen.dart';
+import 'TasteScreen.dart';
 
 void main() {
   runApp(
@@ -15,6 +17,8 @@ void main() {
         '/theloop': (context) => const LoopScreen(),
         '/lincolnpark': (context) => const LincolnParkScreen(),
         '/chinatown': (context) => const ChinatownScreen(),
+        '/lolla' : (context) => const LollaScreen(),
+        '/taste' : (context) => const TasteScreen(),
       },
     ),
   );

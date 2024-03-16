@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class ChinatownScreen extends StatefulWidget {
-  const ChinatownScreen({Key? key}) : super(key: key);
+class TasteScreen extends StatefulWidget {
+  const TasteScreen({Key? key}) : super(key: key);
   @override
-  State<ChinatownScreen> createState() => _ChinatownScreenState();
+  State<TasteScreen> createState() => _TasteScreenState();
 }
-class _ChinatownScreenState extends State<ChinatownScreen>{
+class _TasteScreenState extends State<TasteScreen>{
   int counter = 0;
-  String message = "Chinatown is a neighborhood south of the downtown area in Chicago. It offers a tourist destination filled with Chinese restaurants and stores.";
-  String loopImage = "images/chinatown.png";
+  String message = "Taste of Chicago is a food festival held every September in Grant Park. It is Chicago's largest festival, containing plenty of food and non food related events.";
+  String loopImage = "images/taste.png";
 
   @override
   void initState(){
     super.initState();
-    message = "Chinatown is a neighborhood south of the downtown area in Chicago. It offers a tourist destination filled with Chinese restaurants and stores.";
-    loopImage = "images/chinatown.png";
+    message = "Taste of Chicago is a food festival held every September in Grant Park. It is Chicago's largest festival, containing plenty of food and non food related events.";
+    loopImage = "images/taste.png";
   }
 
   @override
@@ -24,14 +24,14 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
     void trivia(int i){
       if(counter%2 == 0){
         setState(() {
-          message = "Chinatown is a neighborhood south of the downtown area in Chicago. It offers a tourist destination filled with Chinese restaurants and stores.";
-          loopImage = "images/chinatown.png";
+          message = "Taste of Chicago is a food festival held every September in Grant Park. It is Chicago's largest festival, containing plenty of food and non food related events.";
+          loopImage = "images/taste.png";
         });
       }
       else{
         setState(() {
-          message = "Chinatown is home to the Nine-Dragon Wall, which is a smaller copy of a larger wall located in Beijing, China.";
-          loopImage = "images/chinatowntrivia.png";
+          message = "The Taste of Chicago is the world's largest food festival. It was founded by the founder of Morton's The Steakhouse.";
+          loopImage = "images/tastetrivia.png";
         });
       }
     }
@@ -45,9 +45,9 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
             bottom: 140,
           ),
           child: Text(
-            '    Chinatown',
+            'Taste of Chicago',
             style: TextStyle(
-              fontSize: 40,
+              fontSize: 35,
               color: Colors.orangeAccent,
             ),
           ),
@@ -91,7 +91,7 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
                   backgroundColor: Colors.transparent,
                 ),
                 child: Hero(
-                  tag: 'Chinatown',
+                  tag: 'taste',
                   child: Container(
                     width: 250,
                     height: 250,
@@ -113,7 +113,7 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
             ),
             const Padding(padding: EdgeInsets.all(5.0)),
             const Text(
-              "Chinatown\nChinatown, Chicago, IL\n",
+              "Taste of Chicago\n301 S. Columbus Dr. Chicago, IL\n",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.orangeAccent,
@@ -136,12 +136,12 @@ class _ChinatownScreenState extends State<ChinatownScreen>{
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.pushNamed(context, '/chinatown');
+          // Navigator.pushNamed(context, '/taste');
         },
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.blueAccent,
         tooltip: "Trivia",
         child: IconButton(
-          icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.blueAccent,),
+          icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
           onPressed: (){
             counter++;
             trivia(counter);

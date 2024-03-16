@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class LincolnParkScreen extends StatefulWidget {
   const LincolnParkScreen({Key? key}) : super(key: key);
   @override
-  State<LincolnParkScreen> createState() => _LoopScreenState();
+  State<LincolnParkScreen> createState() => _LincolnParkScreenState();
 }
-class _LoopScreenState extends State<LincolnParkScreen>{
+class _LincolnParkScreenState extends State<LincolnParkScreen>{
   int counter = 0;
   String message = "Lincoln Park is a community on the North Side of Chicago. It is known for its upscale retailers, boutiques, as well as restaurants and coffee shops.";
   String loopImage = "images/lincolnpark.png";

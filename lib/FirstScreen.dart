@@ -71,6 +71,8 @@ class FirstScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
+
+            //Options for neighborhoods
             Center(
               child: Column(
                   children: <Widget>[
@@ -232,6 +234,8 @@ class FirstScreen extends StatelessWidget {
                   ]
               ),
             ),
+
+            //Options for Events
             Center(
               child: Column(
                   children: <Widget>[
@@ -239,6 +243,7 @@ class FirstScreen extends StatelessWidget {
                     Row(
                       children: [
                         Container(
+                          padding: const EdgeInsets.only(left: 7),
                           width: 150,
                           height: 150,
                           decoration: const BoxDecoration(
@@ -246,7 +251,7 @@ class FirstScreen extends StatelessWidget {
                           ),
                           child: ElevatedButton(
                             onPressed: (){
-                              Navigator.pushNamed(context, '/theloop');
+                              Navigator.pushNamed(context, '/lolla');
                             },
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
@@ -255,7 +260,7 @@ class FirstScreen extends StatelessWidget {
                               backgroundColor: Colors.transparent,
                             ),
                             child: Hero(
-                              tag: 'The Loop',
+                              tag: 'lolla',
                               child: Container(
                                 width: 150,
                                 height: 150,
@@ -263,7 +268,7 @@ class FirstScreen extends StatelessWidget {
                                     shape: BoxShape.circle,
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
-                                        image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
+                                        image: AssetImage('images/lolla.png'), fit: BoxFit.cover),
                                     boxShadow: const [
                                       BoxShadow(
                                           color: Colors.orangeAccent,
@@ -276,7 +281,58 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    The Loop',
+                          '    Lollapalooza',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
+                    ),
+                    const Padding(padding: EdgeInsets.all(10.0)),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 7),
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/taste');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: const CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'taste',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/taste.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '    Taste of Chicago',
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.orangeAccent,
@@ -288,6 +344,8 @@ class FirstScreen extends StatelessWidget {
                   ]
               ),
             ),
+
+            //Options for sports
             Center(
               child: Column(
                   children: <Widget>[
