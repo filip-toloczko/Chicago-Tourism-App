@@ -5,36 +5,61 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //
     return DefaultTabController(
+
+      // There are three tabs, Neighborhoods, Events, Sports
       length: 3,
       child: Scaffold(
         backgroundColor: Colors.blueGrey.shade400,
         appBar: AppBar(
           toolbarHeight: 170,
-          title: const Padding(
-            padding: EdgeInsets.only(
+
+          // Create padding for the text in the appbar
+          title: Padding(
+            padding: const EdgeInsets.only(
                 bottom: 120,
             ),
-            child: Text(
-              '  Welcome to Chicago',
-              style: TextStyle(
-                fontSize: 37,
-                color: Colors.orange,
-              ),
-            ),
+
+            // Stroke effect for the title
+            child: Stack(
+              children: <Widget>[
+                Text(
+                  ' Welcome to Chicago',
+                  style: TextStyle(
+                    fontSize: 40,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 2
+                      ..color = Colors.orangeAccent,
+                  ),
+                ),
+                Text(
+                  ' Welcome to Chicago',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.blue.shade900,
+                  ),
+                ),
+              ],
+            )
           ),
+
+          // Background image for the appbar
           flexibleSpace: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('images/chicagoproject1.png'),
                   fit: BoxFit.fill,
                 ),
+
+                // Make the image round
                 borderRadius: BorderRadius.all(
                   Radius.circular(30),
                 )
             ),
           ),
+
+          // Make the appbar round
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
@@ -45,6 +70,8 @@ class FirstScreen extends StatelessWidget {
             labelColor: Colors.blueAccent,
             indicatorColor: Colors.blueAccent,
             tabs: [
+
+              // Neighborhood tab
               Tab(
                 icon: Icon(Icons.location_city_rounded, size: 45, color: Colors.orange),
                 child: Text(
@@ -52,6 +79,8 @@ class FirstScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 12),
                 ),
               ),
+
+              // Events tab
               Tab(
                 icon: Icon(Icons.event_rounded, size: 45, color: Colors.orange),
                 child: Text(
@@ -59,6 +88,8 @@ class FirstScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 12),
                 ),
               ),
+
+              // Sports tab
               Tab(
                 icon: Icon(Icons.sports_football_rounded, size: 45, color: Colors.orange),
                 child: Text(
@@ -76,6 +107,7 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
+
                     //Row for The Loop
                     const Padding(padding: EdgeInsets.all(15.0)),
                     Row(
@@ -107,10 +139,10 @@ class FirstScreen extends StatelessWidget {
                                   border: Border.all(color: Colors.orange, width: 10),
                                   image: const DecorationImage(
                                       image: AssetImage('images/theloop.png'), fit: BoxFit.cover),
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
-                                        color: Colors.orangeAccent,
-                                        offset: Offset(5.0, 5.0),
+                                        color: Colors.blueGrey.shade800,
+                                        offset: const Offset(5.0, 5.0),
                                         blurRadius: 4.0,
                                         spreadRadius: 2.5)
                                   ]),
@@ -121,12 +153,11 @@ class FirstScreen extends StatelessWidget {
                       const Text(
                         '    The Loop',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700,
                           color: Colors.orangeAccent,
                         ),
-
-                      ),
-                      ],
+                      ),],
                     ),
 
                     //Row for Lincoln Park
@@ -160,10 +191,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/lincolnpark.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -174,10 +205,10 @@ class FirstScreen extends StatelessWidget {
                         const Text(
                           '    Lincoln Park',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
@@ -213,10 +244,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/chinatown.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -225,12 +256,12 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Chinatown',
+                          '   Chinatown',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 40,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
@@ -242,7 +273,8 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
-                    //Row for Lolla
+
+                    //Row for Lollapalooza
                     const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
@@ -273,10 +305,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/lolla.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -285,17 +317,17 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Lollapalooza',
+                          '   Lollapalooza',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
 
-                    //Row for taste
+                    //Row for taste of Chicago
                     const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
@@ -326,10 +358,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/taste.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -338,17 +370,17 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Taste of Chicago',
+                          '  Taste of Chicago',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
 
-                    //Row for marathon
+                    //Row for Chicago marathon
                     const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
@@ -379,10 +411,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/marathon.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -391,12 +423,12 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Chicago Marathon',
+                          '  Chicago Marathon',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
@@ -408,6 +440,7 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
+
                     //Row for Bears
                     const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
@@ -439,10 +472,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/bears.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -451,12 +484,12 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Chicago Bears',
+                          '  Chicago Bears',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
@@ -492,10 +525,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/sox.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -504,12 +537,12 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Chicago White Sox',
+                          '   Chicago White Sox',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 26,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
@@ -545,10 +578,10 @@ class FirstScreen extends StatelessWidget {
                                     border: Border.all(color: Colors.orange, width: 10),
                                     image: const DecorationImage(
                                         image: AssetImage('images/bulls.png'), fit: BoxFit.cover),
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
-                                          color: Colors.orangeAccent,
-                                          offset: Offset(5.0, 5.0),
+                                          color: Colors.blueGrey.shade800,
+                                          offset: const Offset(5.0, 5.0),
                                           blurRadius: 4.0,
                                           spreadRadius: 2.5)
                                     ]),
@@ -557,21 +590,19 @@ class FirstScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          '    Chicago Bulls',
+                          '  Chicago Bulls',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 35,
+                            fontWeight: FontWeight.w700,
                             color: Colors.orangeAccent,
                           ),
-
                         ),
                       ],
                     ),
                   ]
               ),
             ),
-
           ],
-
         ),
       ),
     );

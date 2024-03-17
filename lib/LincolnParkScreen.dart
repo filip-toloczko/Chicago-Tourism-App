@@ -19,8 +19,6 @@ class _LincolnParkScreenState extends State<LincolnParkScreen>{
 
   @override
   Widget build(BuildContext context) {
-
-
     void trivia(int i){
       if(counter%2 == 0){
         setState(() {
@@ -40,29 +38,51 @@ class _LincolnParkScreenState extends State<LincolnParkScreen>{
       backgroundColor: Colors.blueGrey.shade400,
       appBar: AppBar(
         toolbarHeight: 170,
-        title: const Padding(
-          padding: EdgeInsets.only(
+        title: Padding(
+          padding: const EdgeInsets.only(
             bottom: 140,
           ),
-          child: Text(
-            '   Lincoln Park',
-            style: TextStyle(
-              fontSize: 40,
-              color: Colors.orangeAccent,
-            ),
-          ),
+
+          // Stroke effect for title
+          child: Stack(
+            children: <Widget>[
+              Text(
+                '  Lincoln Park',
+                style: TextStyle(
+                  fontSize: 40,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 2
+                    ..color = Colors.orangeAccent,
+                ),
+              ),
+              Text(
+                '  Lincoln Park',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.blue.shade900,
+                ),
+              ),
+            ],
+          )
         ),
+
+        // Make background an image
         flexibleSpace: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('images/chicagoproject1.png'),
                 fit: BoxFit.fill,
               ),
+
+              // Make the image round
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
               )
           ),
         ),
+
+        // Make the appbar round
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(30),
@@ -84,6 +104,8 @@ class _LincolnParkScreenState extends State<LincolnParkScreen>{
                 onPressed: (){
                   Navigator.pop(context);
                 },
+
+                // Make the button a circle
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   padding: EdgeInsets.zero,
@@ -95,15 +117,17 @@ class _LincolnParkScreenState extends State<LincolnParkScreen>{
                   child: Container(
                     width: 250,
                     height: 250,
+
+                    // Make hero a circle
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.orange, width: 10),
                         image: DecorationImage(
                             image: AssetImage(loopImage), fit: BoxFit.cover),
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
-                              color: Colors.orangeAccent,
-                              offset: Offset(5.0, 5.0),
+                              color: Colors.blueGrey.shade800,
+                              offset: const Offset(5.0, 5.0),
                               blurRadius: 4.0,
                               spreadRadius: 2.5)
                         ]),
@@ -111,22 +135,28 @@ class _LincolnParkScreenState extends State<LincolnParkScreen>{
                 ),
               ),
             ),
+
+            // Title and address
             const Padding(padding: EdgeInsets.all(5.0)),
             const Text(
               "Lincoln Park\nLincoln Park, Chicago, IL\n",
               style: TextStyle(
-                fontSize: 20,
-                color: Colors.orangeAccent,
+                fontSize: 25,
+                fontWeight: FontWeight.w700,
+                color: Colors.white70,
               ),
               textAlign: TextAlign.center,
             ),
+
+            // Description
             Padding(
                 padding: const EdgeInsets.all(5.5),
                 child: Text(
                   message,
                   style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.orangeAccent,
+                    fontSize: 23,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white70,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -134,14 +164,16 @@ class _LincolnParkScreenState extends State<LincolnParkScreen>{
           ],
         ),
       ),
+
+      // Change description and picture on press
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.pushNamed(context, '/lincolnpark');
+
         },
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blue.shade900,
         tooltip: "Trivia",
         child: IconButton(
-          icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
+          icon: Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange.shade700,),
           onPressed: (){
             counter++;
             trivia(counter);

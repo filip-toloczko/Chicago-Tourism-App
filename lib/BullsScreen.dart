@@ -19,8 +19,6 @@ class _BullsScreen extends State<BullsScreen>{
 
   @override
   Widget build(BuildContext context) {
-
-
     void trivia(int i){
       if(counter%2 == 0){
         setState(() {
@@ -37,20 +35,36 @@ class _BullsScreen extends State<BullsScreen>{
     }
     //
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade400,
+      backgroundColor: Colors.blueGrey.shade500,
       appBar: AppBar(
         toolbarHeight: 170,
-        title: const Padding(
-          padding: EdgeInsets.only(
+        title: Padding(
+          padding: const EdgeInsets.only(
             bottom: 140,
           ),
-          child: Text(
-            'Chicago Bulls',
-            style: TextStyle(
-              fontSize: 35,
-              color: Colors.orangeAccent,
-            ),
-          ),
+          child: Stack(
+            children: <Widget>[
+              // Stroked text as border.
+              Text(
+                ' Chicago Bulls',
+                style: TextStyle(
+                  fontSize: 40,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 2
+                    ..color = Colors.orangeAccent,
+                ),
+              ),
+              // Solid text as fill.
+              Text(
+                ' Chicago Bulls',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.blue.shade900,
+                ),
+              ),
+            ],
+          )
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -100,10 +114,10 @@ class _BullsScreen extends State<BullsScreen>{
                         border: Border.all(color: Colors.orange, width: 10),
                         image: DecorationImage(
                             image: AssetImage(loopImage), fit: BoxFit.cover),
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
-                              color: Colors.orangeAccent,
-                              offset: Offset(5.0, 5.0),
+                              color: Colors.blueGrey.shade800,
+                              offset: const Offset(5.0, 5.0),
                               blurRadius: 4.0,
                               spreadRadius: 2.5)
                         ]),
@@ -115,8 +129,9 @@ class _BullsScreen extends State<BullsScreen>{
             const Text(
               "Chicago Bulls\n1901 W Madison St, Chicago, IL\n",
               style: TextStyle(
-                fontSize: 20,
-                color: Colors.orangeAccent,
+                fontSize: 25,
+                fontWeight: FontWeight.w700,
+                color: Colors.white70,
               ),
               textAlign: TextAlign.center,
             ),
@@ -125,8 +140,9 @@ class _BullsScreen extends State<BullsScreen>{
               child: Text(
                 message,
                 style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.orangeAccent,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white70,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -136,12 +152,12 @@ class _BullsScreen extends State<BullsScreen>{
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          // Navigator.pushNamed(context, '/taste');
+
         },
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blue.shade900,
         tooltip: "Trivia",
         child: IconButton(
-          icon: const Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange,),
+          icon: Icon(Icons.question_mark_rounded, size: 30, color: Colors.orange.shade700,),
           onPressed: (){
             counter++;
             trivia(counter);
