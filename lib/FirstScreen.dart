@@ -76,8 +76,8 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
-                    const Padding(padding: EdgeInsets.all(15.0)),
                     //Row for The Loop
+                    const Padding(padding: EdgeInsets.all(15.0)),
                     Row(
                       children: [
                       Container(
@@ -128,6 +128,8 @@ class FirstScreen extends StatelessWidget {
                       ),
                       ],
                     ),
+
+                    //Row for Lincoln Park
                     const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
@@ -179,7 +181,8 @@ class FirstScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    //Lincoln Park Row
+
+                    //Row for Chinatown
                     const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
@@ -239,7 +242,8 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
-                    const Padding(padding: EdgeInsets.all(10.0)),
+                    //Row for Lolla
+                    const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
                         Container(
@@ -290,7 +294,9 @@ class FirstScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Padding(padding: EdgeInsets.all(10.0)),
+
+                    //Row for taste
+                    const Padding(padding: EdgeInsets.all(20.0)),
                     Row(
                       children: [
                         Container(
@@ -341,6 +347,59 @@ class FirstScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+
+                    //Row for marathon
+                    const Padding(padding: EdgeInsets.all(20.0)),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 7),
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/marathon');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: const CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'marathon',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/marathon.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '    Chicago Marathon',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
+                    ),
                   ]
               ),
             ),
@@ -349,15 +408,163 @@ class FirstScreen extends StatelessWidget {
             Center(
               child: Column(
                   children: <Widget>[
-                    const Padding(padding: EdgeInsets.all(10.0)),
-                    Hero(
-                      tag: 'The Loop',
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/neighborhoods');
-                        },
-                        child: Image.asset('images/theloop.png'),
-                      ),
+                    //Row for Bears
+                    const Padding(padding: EdgeInsets.all(20.0)),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 7),
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/bears');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: const CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'bears',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/bears.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '    Chicago Bears',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
+                    ),
+
+                    //Row for Sox
+                    const Padding(padding: EdgeInsets.all(20.0)),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 7),
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/sox');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: const CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'sox',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/sox.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '    Chicago White Sox',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
+                    ),
+
+                    //Row for Bulls
+                    const Padding(padding: EdgeInsets.all(20.0)),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 7),
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.pushNamed(context, '/bulls');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: const CircleBorder(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                            child: Hero(
+                              tag: 'bulls',
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.orange, width: 10),
+                                    image: const DecorationImage(
+                                        image: AssetImage('images/bulls.png'), fit: BoxFit.cover),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Colors.orangeAccent,
+                                          offset: Offset(5.0, 5.0),
+                                          blurRadius: 4.0,
+                                          spreadRadius: 2.5)
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '    Chicago Bulls',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.orangeAccent,
+                          ),
+
+                        ),
+                      ],
                     ),
                   ]
               ),

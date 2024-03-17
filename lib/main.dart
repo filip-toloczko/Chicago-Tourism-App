@@ -5,6 +5,10 @@ import 'FirstScreen.dart';
 import 'LoopScreen.dart';
 import 'LollaScreen.dart';
 import 'TasteScreen.dart';
+import 'MarathonScreen.dart';
+import 'BearsScreen.dart';
+import 'SoxScreen.dart';
+import 'BullsScreen.dart';
 
 void main() {
   runApp(
@@ -19,6 +23,10 @@ void main() {
         '/chinatown': (context) => const ChinatownScreen(),
         '/lolla' : (context) => const LollaScreen(),
         '/taste' : (context) => const TasteScreen(),
+        '/marathon' : (context) => const MarathonScreen(),
+        '/bears' : (context) => const BearsScreen(),
+        '/sox' : (context) => const SoxScreen(),
+        '/bulls' : (context) => const BullsScreen(),
       },
     ),
   );
